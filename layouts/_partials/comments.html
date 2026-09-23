@@ -1,0 +1,42 @@
+{{- /* Comentários via giscus (GitHub Discussions). Configuração em params.giscus no hugo.yaml. */ -}}
+{{- with site.Params.giscus }}
+{{- if and .repoId .categoryId }}
+<div class="comments">
+  <script>
+    (() => {
+      const giscusTheme = () =>
+        document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+
+      const script = document.createElement("script");
+      script.src = "https://giscus.app/client.js";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      Object.entries({
+        repo: "{{ .repo }}",
+        repoId: "{{ .repoId }}",
+        category: "{{ .category }}",
+        categoryId: "{{ .categoryId }}",
+        mapping: "pathname",
+        strict: "1",
+        reactionsEnabled: "1",
+        emitMetadata: "0",
+        inputPosition: "top",
+        theme: giscusTheme(),
+        lang: "{{ .lang | default "pt" }}",
+        loading: "lazy",
+      }).forEach(([key, value]) => (script.dataset[key] = value));
+      document.currentScript.after(script);
+
+      // Acompanha o botão claro/escuro do PaperMod.
+      new MutationObserver(() => {
+        const frame = document.querySelector("iframe.giscus-frame");
+        frame?.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: giscusTheme() } } },
+          "https://giscus.app"
+        );
+      }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    })();
+  </script>
+</div>
+{{- end }}
+{{- end }}
