@@ -1,5 +1,5 @@
-# Troque pelo domínio final (ex.: domínio próprio configurado no Cloudflare).
-baseURL: https://leilaalgarve.pages.dev/
+# Domínio próprio, configurado em Custom domains no Cloudflare Pages.
+baseURL: https://leilaalgarve.dev/
 locale: pt-BR
 defaultContentLanguage: pt
 title: Leila Algarve

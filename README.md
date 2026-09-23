@@ -77,7 +77,8 @@ Em *Workers & Pages → Create → Pages → Connect to Git*, escolha este repos
 O Cloudflare Pages baixa o submodule do tema automaticamente. Sem `HUGO_VERSION`, ele usa
 uma versão antiga do Hugo, e o PaperMod não compila.
 
-Depois de configurar um domínio próprio, atualize `baseURL` no `hugo.yaml`.
+O site responde em <https://leilaalgarve.dev> (domínio próprio em *Custom domains*). Se o
+domínio mudar, atualize `baseURL` no `hugo.yaml`.
 
 ## Licenças
 
