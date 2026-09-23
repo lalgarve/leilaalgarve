@@ -1,0 +1,99 @@
+# Troque pelo domínio final (ex.: domínio próprio configurado no Cloudflare).
+baseURL: https://leilaalgarve.pages.dev/
+locale: pt-BR
+defaultContentLanguage: pt
+title: Leila Algarve
+theme: PaperMod
+copyright: >-
+  © Leila Algarve · Conteúdo sob
+  [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br)
+
+enableRobotsTXT: true
+enableEmoji: true
+pagination:
+  pagerSize: 10
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+  home: [HTML, RSS, JSON] # JSON alimenta a página de busca
+
+taxonomies:
+  tag: tags
+  category: categories
+
+params:
+  env: production
+  description: Portfolio e blog de Leila Algarve.
+  author: Leila Algarve
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br
+
+  defaultTheme: auto
+  disableThemeToggle: false
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowToc: true
+  TocOpen: false
+  comments: true
+
+  profileMode:
+    enabled: true
+    title: Leila Algarve
+    subtitle: Portfolio e blog
+    buttons:
+      - name: Portfolio
+        url: /portfolio/
+      - name: Blog
+        url: /posts/
+      - name: Sobre
+        url: /sobre/
+
+  socialIcons:
+    - name: github
+      url: https://github.com/lalgarve
+    - name: rss
+      url: /index.xml
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 2
+    keys: [title, permalink, summary, content]
+
+  # Valores gerados em https://giscus.app (veja o README).
+  giscus:
+    repo: lalgarve/leilaalgarve
+    repoId: ""
+    category: Comentários
+    categoryId: ""
+    lang: pt
+
+menu:
+  main:
+    - identifier: portfolio
+      name: Portfolio
+      url: /portfolio/
+      weight: 10
+    - identifier: posts
+      name: Blog
+      url: /posts/
+      weight: 20
+    - identifier: sobre
+      name: Sobre
+      url: /sobre/
+      weight: 30
+    - identifier: busca
+      name: Busca
+      url: /busca/
+      weight: 40

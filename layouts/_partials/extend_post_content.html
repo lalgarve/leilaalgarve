@@ -1,0 +1,8 @@
+{{- /* Links dos projetos do portfolio, a partir de params.links no front matter. */ -}}
+{{- if and (eq .Section "portfolio") .Params.links }}
+<ul class="project-links">
+  {{- range .Params.links }}
+  <li><a href="{{ .url }}" rel="noopener" target="_blank">{{ .name }}</a></li>
+  {{- end }}
+</ul>
+{{- end }}

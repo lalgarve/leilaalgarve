@@ -1,0 +1,22 @@
+/* Ajustes sobre o PaperMod. Arquivos em assets/css/extended/ são incluídos automaticamente. */
+
+.comments {
+  margin-top: var(--gap);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: var(--gap) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-links a {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
