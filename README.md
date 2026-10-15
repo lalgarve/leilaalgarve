@@ -41,7 +41,16 @@ hugo new content portfolio/meu-projeto/index.md
 Os arquivos nascem com `draft: true`. Troque para `false` para publicar.
 
 Nos projetos do portfolio, `links` no front matter vira a lista de botões no fim da página,
-e `weight` define a ordem na listagem.
+e `weight` define a ordem na listagem. A página `/portfolio/` lista os projetos em tabela
+(`layouts/portfolio/list.html`), usando estes campos de cada projeto:
+
+| Campo         | Coluna  | Observação                                                        |
+| ------------- | ------- | ----------------------------------------------------------------- |
+| `thumbnail`   | Imagem  | Arquivo da pasta do projeto ou URL; na falta, usa `cover.image`. Sem nenhum dos dois, mostra as iniciais do nome. |
+| `title`       | Projeto | Link para a página do projeto.                                    |
+| `description` | Projeto | Descrição curta, abaixo do nome.                                  |
+| `stage`       | Estágio | Ex.: Ideia, Em desenvolvimento, Estável, Arquivado.               |
+| `version`     | Estágio | Opcional, ex.: `v0.3.0`.                                          |
 
 ### Atualizar o PaperMod
 

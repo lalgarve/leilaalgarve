@@ -20,3 +20,130 @@
   border-radius: var(--radius);
   box-shadow: none;
 }
+
+/* Tabela do portfolio (layouts/portfolio/list.html). */
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--gap);
+}
+
+.project-table th,
+.project-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: middle;
+}
+
+.project-table th {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+
+.project-thumb {
+  width: calc(80px + 1rem);
+}
+
+.project-thumb img,
+.project-initials {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.project-initials {
+  display: grid;
+  place-items: center;
+  background: var(--tertiary);
+  color: var(--secondary);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.project-info a {
+  font-size: 1.125rem;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.project-info p {
+  margin: 0.25rem 0 0;
+  color: var(--secondary);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.project-stage {
+  white-space: nowrap;
+}
+
+.project-badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+}
+
+.project-version {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+  font-family: var(--font-mono, monospace);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Em telas estreitas, o estágio desce para baixo da descrição. */
+@media (max-width: 600px) {
+  .project-table thead {
+    display: none;
+  }
+
+  .project-table tr {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    column-gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .project-thumb {
+    grid-row: span 2;
+    width: auto;
+  }
+
+  .project-thumb img,
+  .project-initials {
+    width: 56px;
+    height: 56px;
+    font-size: 1.125rem;
+  }
+
+  .project-stage {
+    margin-top: 0.5rem;
+    white-space: normal;
+  }
+
+  .project-version {
+    display: inline;
+    margin-inline-start: 0.5rem;
+  }
+}
