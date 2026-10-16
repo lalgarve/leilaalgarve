@@ -7,7 +7,7 @@ summary: ""
 tags: []
 categories: []
 cover:
-  image: ""   # ex.: cover.jpg dentro da pasta do post
+  image: ""   # ex.: cover.jpg dentro da pasta do artigo
   alt: ""
   hidden: false
 comments: true

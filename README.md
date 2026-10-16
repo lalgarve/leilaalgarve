@@ -1,17 +1,17 @@
 # leilaalgarve
 
-Portfolio e blog de Leila Algarve, feito com [Hugo](https://gohugo.io), tema
+Portfolio e artigos de Leila Algarve, feito com [Hugo](https://gohugo.io), tema
 [PaperMod](https://github.com/adityatelange/hugo-PaperMod) e comentários via
 [giscus](https://giscus.app). Publicado no Cloudflare Pages.
 
 ## Estrutura
 
 ```
-archetypes/            modelos para `hugo new` (posts e projetos)
+archetypes/            modelos para `hugo new` (artigos e projetos)
 assets/css/extended/   CSS próprio, carregado automaticamente pelo PaperMod
 content/
   portfolio/           um projeto por pasta (page bundle: index.md + imagens)
-  posts/               um post por pasta (page bundle)
+  artigos/             um artigo por pasta (page bundle)
   sobre.md, arquivo.md, busca.md
 layouts/_partials/     sobrescritas do tema (giscus, licença, links de projeto)
 static/_headers        cabeçalhos HTTP do Cloudflare Pages
@@ -34,7 +34,7 @@ Se o repositório já foi clonado sem o tema: `git submodule update --init --rec
 ### Novo conteúdo
 
 ```sh
-hugo new content posts/meu-post/index.md
+hugo new content artigos/meu-artigo/index.md
 hugo new content portfolio/meu-projeto/index.md
 ```
 

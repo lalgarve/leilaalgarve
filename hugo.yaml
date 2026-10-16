@@ -25,7 +25,7 @@ taxonomies:
 
 params:
   env: production
-  description: Portfolio e blog de Leila Algarve.
+  description: Portfolio e artigos de Leila Algarve.
   author: Leila Algarve
   license:
     name: CC BY-NC-SA 4.0
@@ -33,6 +33,7 @@ params:
 
   defaultTheme: auto
   disableThemeToggle: false
+  mainSections: [artigos] # seção usada no Arquivo e na navegação entre artigos
   ShowReadingTime: true
   ShowShareButtons: false
   ShowPostNavLinks: true
@@ -46,12 +47,12 @@ params:
   profileMode:
     enabled: true
     title: Leila Algarve
-    subtitle: Portfolio e blog
+    subtitle: Portfolio e artigos
     buttons:
       - name: Portfolio
         url: /portfolio/
-      - name: Blog
-        url: /posts/
+      - name: Artigos
+        url: /artigos/
       - name: Sobre
         url: /sobre/
 
@@ -84,9 +85,9 @@ menu:
       name: Portfolio
       url: /portfolio/
       weight: 10
-    - identifier: posts
-      name: Blog
-      url: /posts/
+    - identifier: artigos
+      name: Artigos
+      url: /artigos/
       weight: 20
     - identifier: sobre
       name: Sobre
