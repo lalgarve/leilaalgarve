@@ -5,6 +5,7 @@ description: Simulador de investimentos em bolsa em forma de competição, com d
 summary: Competições de investimento em que jogadores negociam ações com cotações reais e disputam a melhor evolução de portfólio.
 tags: [Java, Spring Boot, Quarkus, AWS, PostgreSQL, BDD]
 weight: 10
+stage: Em desenvolvimento
 links:
   - name: Código no GitHub
     url: https://github.com/lalgarve/jogo-acoes

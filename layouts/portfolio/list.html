@@ -1,0 +1,69 @@
+{{- /*
+  Listagem do portfolio em tabela: imagem, nome, descrição curta e estágio/versão.
+  Front matter usado em cada projeto:
+    thumbnail   imagem da tabela (arquivo do page bundle ou URL); na falta, usa cover.image
+    stage       estágio do projeto (ex.: "Em desenvolvimento")
+    version     versão atual (ex.: "v0.3.0")
+*/ -}}
+{{- define "main" }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}
+  <div class="post-description">{{ . | markdownify }}</div>
+  {{- end }}
+</header>
+
+{{- with .Content }}
+<div class="post-content md-content">{{ . }}</div>
+{{- end }}
+
+<table class="project-table">
+  <thead>
+    <tr>
+      <th scope="col"><span class="visually-hidden">Imagem</span></th>
+      <th scope="col">Projeto</th>
+      <th scope="col">Estágio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{- range .Pages }}
+    {{- $src := .Params.thumbnail | default .Params.cover.image }}
+    {{- $img := $src }}
+    {{- if $src }}
+    {{- with .Resources.GetMatch $src }}
+    {{- $img = .RelPermalink }}
+    {{- if ne .MediaType.SubType "svg" }}
+    {{- $img = (.Fill "160x160 Center webp").RelPermalink }}
+    {{- end }}
+    {{- end }}
+    {{- end }}
+    <tr>
+      <td class="project-thumb">
+        {{- if $img }}
+        <img src="{{ $img }}" alt="" width="80" height="80" loading="lazy">
+        {{- else }}
+        <span class="project-initials" aria-hidden="true">
+          {{- $words := split .Title " " }}
+          {{- substr (index $words 0) 0 1 | upper }}
+          {{- if gt (len $words) 1 }}{{ substr (index $words (sub (len $words) 1)) 0 1 | upper }}{{ end -}}
+        </span>
+        {{- end }}
+      </td>
+      <td class="project-info">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{- if .Draft }} <small>(rascunho)</small>{{ end }}
+        {{- with .Description }}
+        <p>{{ . | markdownify }}</p>
+        {{- end }}
+      </td>
+      <td class="project-stage">
+        {{- with .Params.stage }}<span class="project-badge">{{ . }}</span>{{ end }}
+        {{- with .Params.version }}<span class="project-version">{{ . }}</span>{{ end }}
+        {{- if not (or .Params.stage .Params.version) }}—{{ end }}
+      </td>
+    </tr>
+    {{- end }}
+  </tbody>
+</table>
+{{- end }}
