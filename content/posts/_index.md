@@ -1,4 +1,4 @@
 ---
-title: Blog
-description: Textos sobre desenvolvimento, projetos e aprendizados.
+title: Artigos
+description: Artigos sobre IA, desenvolvimento, projetos e aprendizados.
 ---
