@@ -73,9 +73,9 @@ params:
   # Valores gerados em https://giscus.app (veja o README).
   giscus:
     repo: lalgarve/leilaalgarve
-    repoId: ""
-    category: Comentários
-    categoryId: ""
+    repoId: R_kgDOUnWcJg
+    category: Announcements
+    categoryId: DIC_kwDOUnWcJs4DG1-t
     lang: pt
 
 menu:
