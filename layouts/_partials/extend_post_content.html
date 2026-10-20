@@ -6,3 +6,16 @@
   {{- end }}
 </ul>
 {{- end }}
+{{- /* Artigos relacionados */ -}}
+{{- if eq .Section "artigos" }}
+{{- with first 3 (where (site.RegularPages.Related .) "Section" "artigos") }}
+<nav class="related">
+  <h2>Artigos relacionados</h2>
+  <ul>
+    {{- range . }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ul>
+</nav>
+{{- end }}
+{{- end }}
