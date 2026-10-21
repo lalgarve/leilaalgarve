@@ -48,13 +48,14 @@ params:
     enabled: true
     title: Leila Algarve
     subtitle: Portfolio e artigos
-    buttons:
-      - name: Portfolio
-        url: /portfolio/
-      - name: Artigos
-        url: /artigos/
-      - name: Sobre
-        url: /sobre/
+    # Coluna esquerda da home (layouts/_partials/index_profile.html), em Markdown.
+    about: |-
+      Desenvolvo software há mais de 20 anos, mas meu primeiro contato com programação veio bem
+      antes, ainda na infância. Na página [Sobre](/sobre/) conto essa trajetória, que passa por
+      cálculo financeiro, integração entre sistemas e muito código legado.
+
+      Hoje meu interesse está em como desenvolver sistemas usando IA como ferramenta. É isso que
+      venho testando nos projetos do [portfolio](/portfolio/) e registrando nos artigos.
 
   socialIcons:
     - name: github
