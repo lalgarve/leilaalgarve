@@ -61,11 +61,7 @@
         {{- with .about }}
         <section class="home-about">
             <h2>Sobre mim</h2>
-            <ul>
-                {{- range . }}
-                <li>{{ . | markdownify }}</li>
-                {{- end }}
-            </ul>
+            {{ . | markdownify }}
         </section>
         {{- end }}
         <section class="home-recent">

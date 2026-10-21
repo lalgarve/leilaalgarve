@@ -167,20 +167,25 @@
   font-size: 1.25rem;
 }
 
-.home-columns ul {
+.home-recent ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.home-columns li {
+.home-recent li {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border);
   line-height: 1.5;
 }
 
-.home-columns li p {
-  margin: 0;
+.home-about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.home-about a {
+  box-shadow: 0 1px 0 var(--primary);
 }
 
 .home-recent a {
