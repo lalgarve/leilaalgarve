@@ -147,3 +147,65 @@
     margin-inline-start: 0.5rem;
   }
 }
+
+/* Home: apresentação e artigos recentes (layouts/_partials/index_profile.html). */
+.main .profile {
+  flex-direction: column;
+  gap: calc(var(--gap) * 2);
+}
+
+.home-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--gap) * 1.5);
+  width: 100%;
+  text-align: start;
+}
+
+.home-columns h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.home-columns ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-columns li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.home-columns li p {
+  margin: 0;
+}
+
+.home-recent a {
+  box-shadow: none;
+}
+
+.home-recent time {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+}
+
+.home-recent p {
+  color: var(--secondary);
+}
+
+.home-more {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* No mobile, a coluna de artigos desce para baixo da apresentação. */
+@media (max-width: 600px) {
+  .home-columns {
+    grid-template-columns: 1fr;
+  }
+}

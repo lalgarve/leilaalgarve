@@ -48,6 +48,11 @@ params:
     enabled: true
     title: Leila Algarve
     subtitle: Portfolio e artigos
+    # Coluna esquerda da home (layouts/_partials/index_profile.html).
+    about:
+      - +20 anos de experiência desenvolvendo software
+      - Primeiro contato ainda na infância
+      - Recente interesse em como desenvolver sistemas usando IA como ferramenta
     buttons:
       - name: Portfolio
         url: /portfolio/
