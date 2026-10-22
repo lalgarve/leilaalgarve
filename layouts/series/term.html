@@ -1,0 +1,32 @@
+{{- /*
+  Página de uma série: os artigos numerados na ordem de series_weight
+  (no front matter de cada artigo); sem peso, vale a data de publicação.
+*/ -}}
+{{- define "main" }}
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Description }}
+  <div class="post-description">{{ . | markdownify }}</div>
+  {{- end }}
+  {{- $count := len .Pages }}
+  <div class="post-meta">{{ $count }} {{ cond (eq $count 1) "artigo" "artigos" }}</div>
+</header>
+
+{{- with .Content }}
+<div class="post-content md-content">{{ . }}</div>
+{{- end }}
+
+<ol class="series-list">
+  {{- range .Pages }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- if .Draft }} <small>(rascunho)</small>{{ end }}
+    {{- with .Description }}
+    <p>{{ . | markdownify }}</p>
+    {{- end }}
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
+  </li>
+  {{- end }}
+</ol>
+{{- end }}

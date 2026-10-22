@@ -9,6 +9,7 @@ copyright: >-
 
 enableRobotsTXT: true
 enableEmoji: true
+removePathAccents: true # /series/codigo-legado/ em vez de /series/código-legado/
 pagination:
   pagerSize: 10
 
@@ -22,6 +23,7 @@ outputs:
 taxonomies:
   tag: tags
   category: categories
+  series: series # agrupa artigos, como playlists (layouts/series/)
 
 params:
   env: production
@@ -90,6 +92,10 @@ menu:
       name: Artigos
       url: /artigos/
       weight: 20
+    - identifier: series
+      name: Séries
+      url: /series/
+      weight: 25
     - identifier: sobre
       name: Sobre
       url: /sobre/

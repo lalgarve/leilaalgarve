@@ -12,8 +12,10 @@ assets/css/extended/   CSS próprio, carregado automaticamente pelo PaperMod
 content/
   portfolio/           um projeto por pasta (page bundle: index.md + imagens)
   artigos/             um artigo por pasta (page bundle)
+  series/              descrição e capa de cada série (opcional)
   sobre.md, arquivo.md, busca.md
-layouts/_partials/     sobrescritas do tema (giscus, licença, links de projeto)
+layouts/_partials/     sobrescritas do tema (giscus, licença, links de projeto, home)
+layouts/series/        páginas de séries de artigos
 static/_headers        cabeçalhos HTTP do Cloudflare Pages
 themes/PaperMod/       tema (git submodule; não editar)
 hugo.yaml              configuração do site
@@ -51,6 +53,31 @@ e `weight` define a ordem na listagem. A página `/portfolio/` lista os projetos
 | `description` | Projeto | Descrição curta, abaixo do nome.                                  |
 | `stage`       | Estágio | Ex.: Ideia, Em desenvolvimento, Estável, Arquivado.               |
 | `version`     | Estágio | Opcional, ex.: `v0.3.0`.                                          |
+
+### Séries de artigos
+
+Uma série agrupa artigos para ler em sequência, como uma playlist. Para colocar um artigo
+numa série, use o front matter:
+
+```yaml
+series: [Desenvolvendo com IA]   # pode ter mais de uma série
+series_weight: 2                 # ordem dentro da série; sem ele, vale a data
+```
+
+A série aparece em `/series/` (menu **Séries**). Cada artigo da série ganha, no fim, o
+quadro "Parte 2 de 5 da série …" com links para o anterior e o próximo.
+
+Para dar descrição e capa à série, crie `content/series/<nome-da-serie>/_index.md`. O nome da
+pasta é o nome da série em minúsculas, com hífens e sem acentos:
+
+```yaml
+---
+title: Desenvolvendo com IA
+description: Experimentos usando IA como ferramenta.
+cover:
+  image: capa.png   # arquivo na mesma pasta; sem capa, o card mostra as iniciais
+---
+```
 
 ### Atualizar o PaperMod
 
