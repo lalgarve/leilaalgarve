@@ -6,6 +6,7 @@
   {{- end }}
 </ul>
 {{- end }}
+{{- partial "series_nav.html" . }}
 {{- /* Artigos relacionados */ -}}
 {{- if eq .Section "artigos" }}
 {{- with first 3 (where (site.RegularPages.Related .) "Section" "artigos") }}
