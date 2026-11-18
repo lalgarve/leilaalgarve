@@ -9,6 +9,7 @@ copyright: >-
 
 enableRobotsTXT: true
 enableEmoji: true
+removePathAccents: true # /series/codigo-legado/ em vez de /series/código-legado/
 pagination:
   pagerSize: 10
 
@@ -19,13 +20,19 @@ minify:
 outputs:
   home: [HTML, RSS, JSON] # JSON alimenta a página de busca
 
+markup:
+  highlight:
+    lineNos: true # numera as linhas dos blocos de código; {linenos=false} desliga em um bloco
+    lineNumbersInTable: true # o botão de copiar não leva os números junto
+
 taxonomies:
   tag: tags
   category: categories
+  series: series # agrupa artigos, como playlists (layouts/series/)
 
 params:
   env: production
-  description: Portfolio e blog de Leila Algarve.
+  description: Portfolio e artigos de Leila Algarve.
   author: Leila Algarve
   license:
     name: CC BY-NC-SA 4.0
@@ -33,6 +40,7 @@ params:
 
   defaultTheme: auto
   disableThemeToggle: false
+  mainSections: [artigos] # seção usada no Arquivo e na navegação entre artigos
   ShowReadingTime: true
   ShowShareButtons: false
   ShowPostNavLinks: true
@@ -46,14 +54,15 @@ params:
   profileMode:
     enabled: true
     title: Leila Algarve
-    subtitle: Portfolio e blog
-    buttons:
-      - name: Portfolio
-        url: /portfolio/
-      - name: Blog
-        url: /posts/
-      - name: Sobre
-        url: /sobre/
+    subtitle: Portfolio e artigos
+    # Coluna esquerda da home (layouts/_partials/index_profile.html), em Markdown.
+    about: |-
+      Desenvolvo software há mais de 20 anos, mas meu primeiro contato com programação veio bem
+      antes, ainda na infância. Na página [Sobre](/sobre/) conto essa trajetória, que passa por
+      cálculo financeiro, integração entre sistemas e muito código legado.
+
+      Hoje meu interesse está em como desenvolver sistemas usando IA como ferramenta. É isso que
+      venho testando nos projetos do [portfolio](/portfolio/) e registrando nos artigos.
 
   socialIcons:
     - name: github
@@ -73,9 +82,9 @@ params:
   # Valores gerados em https://giscus.app (veja o README).
   giscus:
     repo: lalgarve/leilaalgarve
-    repoId: ""
-    category: Comentários
-    categoryId: ""
+    repoId: R_kgDOUnWcJg
+    category: Announcements
+    categoryId: DIC_kwDOUnWcJs4DG1-t
     lang: pt
 
 menu:
@@ -84,10 +93,14 @@ menu:
       name: Portfolio
       url: /portfolio/
       weight: 10
-    - identifier: posts
-      name: Blog
-      url: /posts/
+    - identifier: artigos
+      name: Artigos
+      url: /artigos/
       weight: 20
+    - identifier: series
+      name: Séries
+      url: /series/
+      weight: 25
     - identifier: sobre
       name: Sobre
       url: /sobre/

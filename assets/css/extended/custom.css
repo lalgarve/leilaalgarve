@@ -147,3 +147,188 @@
     margin-inline-start: 0.5rem;
   }
 }
+
+/* Home: apresentação e artigos recentes (layouts/_partials/index_profile.html). */
+.main .profile {
+  flex-direction: column;
+  gap: calc(var(--gap) * 2);
+}
+
+.home-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--gap) * 1.5);
+  width: 100%;
+  text-align: start;
+}
+
+.home-columns h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.home-recent ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-recent li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.home-about p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.home-about a {
+  box-shadow: 0 1px 0 var(--primary);
+}
+
+.home-recent a {
+  box-shadow: none;
+}
+
+.home-recent time {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+}
+
+.home-recent p {
+  color: var(--secondary);
+}
+
+.home-more {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* No mobile, a coluna de artigos desce para baixo da apresentação. */
+@media (max-width: 600px) {
+  .home-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Séries (layouts/series/ e layouts/_partials/series_nav.html). */
+.series-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.series-card a {
+  display: block;
+  box-shadow: none;
+}
+
+.series-thumb {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--tertiary);
+}
+
+.series-thumb img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+.series-initials {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--secondary);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.series-count {
+  position: absolute;
+  inset-inline-end: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius);
+  background: rgb(0 0 0 / 75%);
+  color: #fff;
+  font-size: 0.8125rem;
+}
+
+.series-title {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.series-card p {
+  margin: 0.25rem 0 0;
+  color: var(--secondary);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.series-list {
+  padding-inline-start: 1.5rem;
+}
+
+.series-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.series-list a {
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.series-list p {
+  margin: 0.25rem 0 0;
+  color: var(--secondary);
+}
+
+.series-list time {
+  display: block;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+}
+
+.series-nav {
+  margin-top: calc(var(--gap) * 2);
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.series-nav p {
+  margin: 0;
+}
+
+.series-nav a {
+  box-shadow: 0 1px 0 var(--primary);
+}
+
+.series-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.series-nav .next {
+  margin-inline-start: auto;
+}

@@ -1,0 +1,26 @@
+{{- /* Posição do artigo em cada série e links para o anterior e o próximo da série. */ -}}
+{{- $page := . }}
+{{- range $term := .GetTerms "series" }}
+{{- $pages := $term.Pages }}
+{{- range $i, $p := $pages }}
+{{- if eq $p $page }}
+<nav class="series-nav" aria-label="Série {{ $term.Title }}">
+  <p>Parte {{ add $i 1 }} de {{ len $pages }} da série <a href="{{ $term.RelPermalink }}">{{ $term.Title }}</a></p>
+  {{- if or (gt $i 0) (lt (add $i 1) (len $pages)) }}
+  <ul>
+    {{- if gt $i 0 }}
+    {{- with index $pages (sub $i 1) }}
+    <li class="prev">← <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+    {{- end }}
+    {{- if lt (add $i 1) (len $pages) }}
+    {{- with index $pages (add $i 1) }}
+    <li class="next"><a href="{{ .RelPermalink }}">{{ .Title }}</a> →</li>
+    {{- end }}
+    {{- end }}
+  </ul>
+  {{- end }}
+</nav>
+{{- end }}
+{{- end }}
+{{- end }}
