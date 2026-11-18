@@ -20,6 +20,11 @@ minify:
 outputs:
   home: [HTML, RSS, JSON] # JSON alimenta a página de busca
 
+markup:
+  highlight:
+    lineNos: true # numera as linhas dos blocos de código; {linenos=false} desliga em um bloco
+    lineNumbersInTable: true # o botão de copiar não leva os números junto
+
 taxonomies:
   tag: tags
   category: categories
